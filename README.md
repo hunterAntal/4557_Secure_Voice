@@ -105,5 +105,16 @@ This runs:
 - **Bandwidth**: 64 Kbps (with error correction overhead)
 - **Security Level**: 256-bit symmetric, 2048-bit asymmetric
 
+## Encryption
+RSA keys:
+- Used for identity
+- Used for secure exchange of AES keys
+- Slow → only used at the beginning and for signatures
+
+AES keys:
+- Fast
+- Used to encrypt all real voice data
+- Rotated every session (optional: every hour)
+
 ## License
 MIT License
