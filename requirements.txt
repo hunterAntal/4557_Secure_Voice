@@ -1,0 +1,7 @@
+numpy>=1.24.0
+scipy>=1.10.0
+pycryptodome>=3.19.0
+pyaudio>=0.2.13
+reedsolo>=1.7.0
+matplotlib>=3.7.0
+soundfile>=0.12.0

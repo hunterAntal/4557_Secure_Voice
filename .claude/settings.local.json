@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python crypto_module.py:*)",
+      "Bash(python test_system.py:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
