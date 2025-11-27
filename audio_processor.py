@@ -244,24 +244,31 @@ class AudioProcessor:
 
     def process_for_transmission(self, audio_data: np.ndarray) -> Tuple[bytes, int]:
         """
-        Complete processing pipeline: Filter -> ADC -> Compress
+        Complete processing pipeline: Filter -> ADC -> (optional) Compress
 
         Args:
             audio_data: Normalized audio input [-1.0, 1.0]
+            use_adpcm: If True, use 4-bit ADPCM compression. If False, send raw PCM.
 
         Returns:
-            Tuple of (compressed_data, num_samples)
-        """
+            Tuple of (compressed_or_pcm_data, num_samples)
+    """
+        ##### TESTING WITHOUT COMPRESSION #####
+        use_adpcm = True
+
         # Step 1: Anti-aliasing filter
         filtered = self.anti_alias_filter(audio_data)
 
         # Step 2: ADC simulation
         quantized = self.adc_simulate(filtered)
 
-        # Step 3: ADPCM compression
-        compressed = self.adpcm_encode(quantized)
-
-        return compressed, len(quantized)
+        if use_adpcm:
+                # Step 3: ADPCM compression (4:1)
+                compressed = self.adpcm_encode(quantized)
+                return compressed, len(quantized)
+        else:
+                # High-quality mode: send raw 16-bit PCM bytes
+                return quantized.tobytes(), len(quantized)
 
     def process_for_playback(self, compressed_data: bytes, num_samples: int) -> np.ndarray:
         """
@@ -313,4 +320,4 @@ if __name__ == "__main__":
     print(f"Compressed size: {len(compressed)} bytes")
     print(f"Compression ratio: {compression_ratio:.2f}:1")
     print(f"SNR: {snr:.2f} dB")
-    print(f"SNR requirement: ≤ 40 dB {'✓' if snr <= 40 else '✗'}")
+    print(f"SNR requirement: >= 40 dB {'' if snr >= 40 else ''}")

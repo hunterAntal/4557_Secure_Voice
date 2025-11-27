@@ -402,7 +402,7 @@ if __name__ == "__main__":
         print(f"    Decrypted message: {decrypted}")
         print(f"    Match: {decrypted == test_message}")
     else:
-        print("   ✗ Verification failed!")
+        print("   x Verification failed!")
 
     # Test tampering detection
     print("\n7. Testing tampering detection...")

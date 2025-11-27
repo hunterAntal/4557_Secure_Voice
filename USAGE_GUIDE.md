@@ -39,7 +39,7 @@ This validates:
 
 **Terminal 1 - Start Receiver:**
 ```bash
-python receiver.py --port 5000 --output received.wav
+python receiver.py --port 5000 --output received1.wav
 ```
 
 **Terminal 2 - Start Transmitter:**

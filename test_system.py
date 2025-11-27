@@ -26,7 +26,7 @@ class SystemTester:
 
     def print_test(self, name: str, passed: bool, details: str = ""):
         """Print test result"""
-        status = " PASS" if passed else "✗ FAIL"
+        status = " PASS" if passed else "x FAIL"
         print(f"\n{status} - {name}")
         if details:
             print(f"  {details}")
@@ -396,7 +396,7 @@ class SystemTester:
             try:
                 test_func()
             except Exception as e:
-                print(f"\n✗ {test_name} - ERROR: {e}")
+                print(f"\nx {test_name} - ERROR: {e}")
                 import traceback
                 traceback.print_exc()
 
@@ -409,7 +409,7 @@ class SystemTester:
 
         print(f"\nTotal tests: {total}")
         print(f"Passed: {passed} ")
-        print(f"Failed: {failed} ✗")
+        print(f"Failed: {failed} x")
         print(f"Success rate: {(passed / total * 100):.1f}%")
 
         if failed == 0:
@@ -418,7 +418,7 @@ class SystemTester:
             print("█" * 80)
         else:
             print("\n" + "█" * 80)
-            print(f" ✗ {failed} TEST(S) FAILED - REVIEW REQUIRED")
+            print(f" x {failed} TEST(S) FAILED - REVIEW REQUIRED")
             print("█" * 80)
 
         return failed == 0
