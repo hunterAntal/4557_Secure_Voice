@@ -26,7 +26,7 @@ class SystemTester:
 
     def print_test(self, name: str, passed: bool, details: str = ""):
         """Print test result"""
-        status = "✓ PASS" if passed else "✗ FAIL"
+        status = " PASS" if passed else "✗ FAIL"
         print(f"\n{status} - {name}")
         if details:
             print(f"  {details}")
@@ -408,13 +408,13 @@ class SystemTester:
         failed = total - passed
 
         print(f"\nTotal tests: {total}")
-        print(f"Passed: {passed} ✓")
+        print(f"Passed: {passed} ")
         print(f"Failed: {failed} ✗")
         print(f"Success rate: {(passed / total * 100):.1f}%")
 
         if failed == 0:
             print("\n" + "█" * 80)
-            print(" ✓ ALL REQUIREMENTS MET - SYSTEM VALIDATED")
+            print("  ALL REQUIREMENTS MET - SYSTEM VALIDATED")
             print("█" * 80)
         else:
             print("\n" + "█" * 80)

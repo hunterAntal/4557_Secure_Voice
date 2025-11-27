@@ -291,7 +291,7 @@ if __name__ == "__main__":
         print(f"\nError rate: {rate:.3f} ({rate * 100:.1f}%)")
         print(f"  Bit errors introduced: {results['bit_errors_introduced']}")
         print(f"  Errors corrected: {results['errors_corrected']}")
-        print(f"  Success: {'✓' if results['correction_successful'] else '✗'}")
+        print(f"  Success: {'' if results['correction_successful'] else '✗'}")
 
     # Test adaptive error correction
     print("\n" + "=" * 80)
@@ -324,6 +324,6 @@ if __name__ == "__main__":
 
         success = decoded == test_data
         print(f"  {condition:12s} (err={error_rate:.3f}): level={level:6s}, "
-              f"errors={errors:3d}, success={'✓' if success else '✗'}")
+              f"errors={errors:3d}, success={'' if success else '✗'}")
 
-    print("\n✓ Error correction tests complete!")
+    print("\n Error correction tests complete!")

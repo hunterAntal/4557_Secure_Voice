@@ -399,8 +399,8 @@ if __name__ == "__main__":
     decrypted = receiver.verify_secure_packet(secure_packet)
 
     if decrypted:
-        print(f"   ✓ Decrypted message: {decrypted}")
-        print(f"   ✓ Match: {decrypted == test_message}")
+        print(f"    Decrypted message: {decrypted}")
+        print(f"    Match: {decrypted == test_message}")
     else:
         print("   ✗ Verification failed!")
 
@@ -411,4 +411,4 @@ if __name__ == "__main__":
     decrypted_tampered = receiver.verify_secure_packet(bytes(tampered_packet))
     print(f"   Tampered packet accepted: {decrypted_tampered is not None} (should be False)")
 
-    print("\n✓ Cryptographic module tests complete!")
+    print("\n Cryptographic module tests complete!")

@@ -23,13 +23,13 @@ def generate_keypair(prefix: str):
     private_filename = f"{prefix}_private.pem"
     with open(private_filename, 'wb') as f:
         f.write(private_key)
-    print(f"  ✓ Private key saved: {private_filename}")
+    print(f"   Private key saved: {private_filename}")
 
     # Save public key
     public_filename = f"{prefix}_public.pem"
     with open(public_filename, 'wb') as f:
         f.write(public_key)
-    print(f"  ✓ Public key saved: {public_filename}")
+    print(f"   Public key saved: {public_filename}")
 
     return private_filename, public_filename
 

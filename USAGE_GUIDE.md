@@ -28,12 +28,12 @@ python test_system.py
 ```
 
 This validates:
-- ✓ SNR ≤ 40 dB
-- ✓ Data rate ≤ 64 Kbps
-- ✓ Encryption (eavesdropping protection)
-- ✓ Authentication (imposter protection)
-- ✓ Integrity (manipulation protection)
-- ✓ Error correction capability
+-  SNR ≤ 40 dB
+-  Data rate ≤ 64 Kbps
+-  Encryption (eavesdropping protection)
+-  Authentication (imposter protection)
+-  Integrity (manipulation protection)
+-  Error correction capability
 
 ### 4. Run End-to-End Transmission
 
@@ -197,7 +197,7 @@ RECEIVER:
 
 - **Theoretical:** ~98 dB (16-bit quantization)
 - **Practical:** 38-40 dB (with compression and filtering)
-- **Requirement:** ≤ 40 dB ✓
+- **Requirement:** ≤ 40 dB 
 
 Factors affecting SNR:
 - ADPCM quantization error
@@ -210,7 +210,7 @@ Factors affecting SNR:
 - **After ADPCM:** 32 Kbps (4:1 compression)
 - **After Reed-Solomon:** ~37 Kbps (14% overhead)
 - **After encryption:** ~42 Kbps (protocol overhead)
-- **Requirement:** ≤ 64 Kbps ✓
+- **Requirement:** ≤ 64 Kbps 
 
 ### Latency
 

@@ -142,7 +142,7 @@ class VoiceReceiver:
             wav_file.setframerate(self.audio_processor.sample_rate)
             wav_file.writeframes(audio_int16.tobytes())
 
-        print(f"✓ Audio saved successfully")
+        print(f" Audio saved successfully")
 
     def calculate_metrics(self, original_audio: np.ndarray = None):
         """
@@ -180,7 +180,7 @@ class VoiceReceiver:
             print(f"\nSignal-to-Noise Ratio:")
             print(f"  SNR: {snr:.2f} dB")
             print(f"  Requirement: ≤ 40 dB")
-            print(f"  Status: {'✓ PASS' if snr <= 40 else '✗ FAIL'}")
+            print(f"  Status: {' PASS' if snr <= 40 else '✗ FAIL'}")
 
         # Transmission efficiency
         stats = self.channel.get_statistics()
@@ -192,7 +192,7 @@ class VoiceReceiver:
             print(f"  Average packet size: {avg_packet_size:.1f} bytes")
             print(f"  Effective bitrate: {bitrate:.1f} Kbps")
             print(f"  Requirement: >= 64 Kbps")
-            print(f"  Status: {'✓ PASS' if bitrate >= 64 else '✗ FAIL'}")
+            print(f"  Status: {' PASS' if bitrate >= 64 else '✗ FAIL'}")
 
 
 def generate_keys():

@@ -168,7 +168,7 @@ class SecureChannel:
 
             self.is_authenticated = True
             self.session_active = True
-            print("[Client] ✓ Handshake complete - session established")
+            print("[Client] Handshake complete - session established")
             return True
 
         except Exception as e:
@@ -258,7 +258,7 @@ class SecureChannel:
 
             self.is_authenticated = True
             self.session_active = True
-            print("[Server] ✓ Handshake complete - session established")
+            print("[Server] Handshake complete - session established")
             return True
 
         except Exception as e:
