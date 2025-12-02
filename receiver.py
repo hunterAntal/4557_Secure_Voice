@@ -188,12 +188,6 @@ class VoiceReceiver:
             avg_packet_size = len(audio_data) * 2 / stats['packets_received']  # bytes
             bitrate = (avg_packet_size * 8 * stats['packets_received']) / (len(audio_data) / self.audio_processor.sample_rate) / 1000
 
-            print(f"\nTransmission Statistics:")
-            print(f"  Average packet size: {avg_packet_size:.1f} bytes")
-            print(f"  Effective bitrate: {bitrate:.1f} Kbps")
-            print(f"  Requirement: >= 64 Kbps")
-            print(f"  Status: {' PASS' if bitrate >= 64 else 'x FAIL'}")
-
 
 def generate_keys():
     """Generate RSA key pair for testing"""

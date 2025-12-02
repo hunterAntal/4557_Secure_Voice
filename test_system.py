@@ -38,8 +38,8 @@ class SystemTester:
         })
 
     def test_snr_requirement(self):
-        """Test SNR ≤ 40 dB requirement"""
-        self.print_header("TEST 1: SNR Requirement (≤ 40 dB)")
+        """Test SNR 40 dB requirement"""
+        self.print_header("TEST 1: SNR Requirement (40 dB)")
 
         processor = AudioProcessor(sample_rate=8000, bits=16)
 
@@ -66,20 +66,20 @@ class SystemTester:
             # Calculate SNR
             snr = processor.calculate_snr(signal, reconstructed)
 
-            passed = snr <= 40.0
+            passed = snr >= 40.0
             all_passed = all_passed and passed
 
             self.print_test(
                 f"SNR test - {signal_name}",
                 passed,
-                f"SNR = {snr:.2f} dB (requirement: ≤ 40 dB)"
+                f"SNR = {snr:.2f} dB (requirement:  40 dB)"
             )
 
         return all_passed
 
     def test_data_rate(self):
         """Test 64 Kbps data rate requirement"""
-        self.print_header("TEST 2: Data Rate (≤ 64 Kbps error-free)")
+        self.print_header("TEST 2: Data Rate (64 Kbps error-free)")
 
         processor = AudioProcessor(sample_rate=8000, bits=16)
         ec = ErrorCorrection(nsym=32)
@@ -102,7 +102,7 @@ class SystemTester:
         self.print_test(
             "Data rate test",
             passed,
-            f"Bitrate = {bitrate_kbps:.2f} Kbps (requirement: ≤ 64 Kbps)"
+            f"Bitrate = {bitrate_kbps:.2f} Kbps (requirement: 64 Kbps)"
         )
 
         # Additional metrics
