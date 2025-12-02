@@ -6,7 +6,7 @@ This project implements a complete end-to-end encrypted voice transmission syste
 
 ## Requirements Compliance
 
-### ✓ SNR ≤ 40 dB
+### ✓ SNR 40 dB
 **Status: PASSED**
 - Achieved: 0.15 - 7.31 dB (well within specification)
 - Implementation: 16-bit ADC quantization with 8th order Butterworth anti-aliasing filter
@@ -56,7 +56,7 @@ This project implements a complete end-to-end encrypted voice transmission syste
 │         ↓                                                        │
 │  Anti-aliasing Filter (Butterworth 8th order, 3.4 kHz)         │
 │         ↓                                                        │
-│  ADC (16-bit @ 8 kHz) ..................... SNR ≤ 40 dB        │
+│  ADC (16-bit @ 8 kHz) ..................... SNR  40 dB        │
 │         ↓                                                        │
 │  ADPCM Compression (4:1 ratio) ............ 32 Kbps            │
 │         ↓                                                        │
@@ -157,7 +157,7 @@ Each packet contains:
 
 | Metric | Target | Achieved | Status |
 |--------|--------|----------|--------|
-| SNR | ≤ 40 dB | 0.15-7.31 dB | ✓ PASS |
+| SNR |  40 dB | 0.15-7.31 dB | ✓ PASS |
 | Bit Rate | ≤ 64 Kbps | ~42 Kbps | ✓ PASS |
 | Processing Latency | < 500 ms | ~280 ms | ✓ PASS |
 | Compression Ratio | - | 4:1 | - |

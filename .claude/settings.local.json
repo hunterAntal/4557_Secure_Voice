@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(python crypto_module.py:*)",
-      "Bash(python test_system.py:*)"
+      "Bash(python test_system.py:*)",
+      "Bash(find:*)",
+      "Bash(rm:*)"
     ],
     "deny": [],
     "ask": []
