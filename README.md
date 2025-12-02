@@ -12,7 +12,7 @@ A complete end-to-end encrypted voice transmission system designed for secure co
 ```
 
 ## Requirements Met
-- **SNR**: ≤40dB (achieved through 16-bit quantization and filtering)
+- **SNR**: 40dB (achieved through 16-bit quantization and filtering)
 - **Data Rate**: 64 Kbps error-free transmission
 - **Security**: Protection against eavesdropping, imposter clients, and content manipulation
 
