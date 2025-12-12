@@ -4,7 +4,12 @@
       "Bash(python crypto_module.py:*)",
       "Bash(python test_system.py:*)",
       "Bash(find:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(pip install:*)",
+      "Bash(python src/web/server.py:*)",
+      "Bash(uvicorn:*)",
+      "Bash(curl:*)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []
